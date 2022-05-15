@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 
 const IndexPage = () => {
@@ -13,7 +12,10 @@ const IndexPage = () => {
   const [starsCount, setStarsCount] = useState(0)
   useEffect(() => {
     // get data from GitHub api
-    fetch(`https://api.github.com/repos/gatsbyjs/gatsby`,{method:'GET',headers:{})
+    fetch(`https://api.github.com/repos/gatsbyjs/gatsby`,{method:'GET',headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },})
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setStarsCount(resultData.stargazers_count)
