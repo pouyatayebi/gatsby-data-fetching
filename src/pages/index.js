@@ -13,7 +13,7 @@ const IndexPage = () => {
   useEffect(() => {
     // get data from GitHub api
     
-   const getData=async (url = '', data = {}) {
+   const getData=async (url = '', data = {})=> {
   // Default options are marked with *
   const response = await fetch(url, {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
