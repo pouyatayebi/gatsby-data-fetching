@@ -33,7 +33,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <h1>Examples</h1>
+      <h1>Examples Gatsby</h1>
       <h2>Build Time</h2>
       <p>
         This data from GitHub is fetched using gatsby-source-graphql at build
