@@ -6,17 +6,6 @@ const IndexPage = () => {
   // ----------------------
   // BUILD TIME DATA FETCHING USING GRAPHQL
   // ----------------------
-  const gatsbyRepoData = useStaticQuery(graphql`
-    query {
-      github {
-        repository(name: "gatsby", owner: "gatsbyjs") {
-          id
-          nameWithOwner
-          url
-        }
-      }
-    }
-  `)
 
   // ----------------------
   // RUNTIME DATA FETCHING
@@ -49,19 +38,7 @@ const IndexPage = () => {
         </a>
         .
       </p>
-      <p>
-        Gatsby repo:{` `}
-        <a
-          href={
-            gatsbyRepoData.github.repository &&
-            gatsbyRepoData.github.repository.nameWithOwner
-          }
-        >
-          {gatsbyRepoData.github.repository
-            ? gatsbyRepoData.github.repository.url
-            : `(to get this data at build time from GitHub you need to include a GitHub access token in the request by including a .env file)`}
-        </a>
-      </p>
+
       <h2>Runtime</h2>
       <p>
         This data from GitHub is fetched using the Fetch API at runtime. This
